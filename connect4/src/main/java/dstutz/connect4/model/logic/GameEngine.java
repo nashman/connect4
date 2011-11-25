@@ -1,4 +1,4 @@
-package dstutz.connect4.model;
+package dstutz.connect4.model.logic;
 
 import dstutz.connect4.common.DropColor;
 import dstutz.connect4.gui.GameScreen;

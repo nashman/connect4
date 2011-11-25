@@ -2,7 +2,7 @@ package dstutz.connect4;
 
 import dstutz.connect4.controller.ControllerGameSession;
 import dstutz.connect4.controller.ControllerGameSetup;
-import dstutz.connect4.model.GameEngine;
+import dstutz.connect4.model.logic.GameEngine;
 
 public class Testlauf {
 
