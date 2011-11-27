@@ -11,6 +11,7 @@ public class GameEngine {
 	private int[] gameData = new int[4];
 	private DropColor activeDropColor;
 	private int choosenColumn;
+	private AILogic ailogic;
 
 	public GameEngine() {
 		gameSetup = new SetupScreen();

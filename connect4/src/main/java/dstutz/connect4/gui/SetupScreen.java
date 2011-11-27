@@ -23,8 +23,8 @@ public class SetupScreen extends Observable {
 	private JTextField txtNameP2;
 	private JLabel labelMessagebox;
 
-	private JComboBox<SkillLevel> comboBox_levelP1;
-	private JComboBox<SkillLevel> comboBox_levelP2;
+	private JComboBox comboBox_levelP1;
+	private JComboBox comboBox_levelP2;
 	private String[] gameSetupData = new String[4];
 
 	private final JRadioButton rdbtnPlayerH1 = new JRadioButton("Human");
@@ -90,7 +90,7 @@ public class SetupScreen extends Observable {
 		return "Weiss noch nicht"; // comboBox_levelP1.;
 	}
 
-	public JComboBox<SkillLevel> getComboBox_levelP2() {
+	public JComboBox getComboBox_levelP2() {
 		return comboBox_levelP2;
 	}
 
@@ -124,9 +124,9 @@ public class SetupScreen extends Observable {
 		rdbtnPlayerAI1.setBounds(6, 64, 91, 23);
 		panel_1.add(rdbtnPlayerAI1);
 
-		comboBox_levelP1 = new JComboBox<SkillLevel>();
-		comboBox_levelP1.setModel(new DefaultComboBoxModel<SkillLevel>(
-				SkillLevel.values()));
+		comboBox_levelP1 = new JComboBox();
+		comboBox_levelP1
+				.setModel(new DefaultComboBoxModel(SkillLevel.values()));
 		comboBox_levelP1.setBounds(103, 65, 127, 22);
 		panel_1.add(comboBox_levelP1);
 
@@ -162,10 +162,10 @@ public class SetupScreen extends Observable {
 		group_p2.add(rdbtnPlayerH2);
 		group_p2.add(rdbtnPlayerAI2);
 
-		comboBox_levelP2 = new JComboBox<SkillLevel>();
+		comboBox_levelP2 = new JComboBox();
 
-		comboBox_levelP2.setModel(new DefaultComboBoxModel<SkillLevel>(
-				SkillLevel.values()));
+		comboBox_levelP2
+				.setModel(new DefaultComboBoxModel(SkillLevel.values()));
 		comboBox_levelP2.setBounds(103, 65, 127, 22);
 		panel_2.add(comboBox_levelP2);
 
