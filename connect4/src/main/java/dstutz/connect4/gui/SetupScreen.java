@@ -182,9 +182,8 @@ public class SetupScreen extends Observable {
 	}
 
 	public void notifyController() {
-		super.setChanged(); // Markierung, da� sich der Text ge�ndert hat
-		super.notifyObservers(this.gameSetupData); // ruft f�r alle Beobachter
-													// die
+		super.setChanged(); // Markierung, das sich der Text geandert hat
+		super.notifyObservers(this.gameSetupData); // informiert alle Beobachter
 	}
 
 	class MyActionListener implements ActionListener {

@@ -24,23 +24,30 @@ public class Game {
 	ControllerGameSetup cGameSetup = new ControllerGameSetup();
 	ControllerGameSession cGameSession = new ControllerGameSession();
 	public String[] gameSetupData;
+	public GameData gameData;
 
 	public void startSetup() {
 		gameSetup = new SetupScreen();
 		gameSetup.setFrame(true);
 		gameSetup.addObserver(cGameSetup);
+		gameData = new GameData();
 
 		while (cGameSetup.isStatus()) {
-			System.out.println("Status " + cGameSetup.isStatus());
+			System.out.println("Status Setup " + cGameSetup.isStatus());
 		}
+		gameData.setSetupData(cGameSetup.gameSetupData);
 	}
 
 	public void startMatch() {
 		gameSetupData = gameSetupData;
 		gameScreen = new GameScreen();
 		gameScreen.setFrame(true);
-		gameScreen.setStartData(gameSetupData[0], gameSetupData[1], 0, 0,
-				DropColor.YELLOW);
+		gameScreen.setStartData(gameData.getSetupData(), DropColor.YELLOW);
+
+		// while (cGameSession.isStatus()) {
+		// System.out.println("Status Game " + cGameSetup.isStatus());
+		// }
+
 	}
 
 }

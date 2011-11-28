@@ -5,7 +5,13 @@ import java.util.Observer;
 
 public class ControllerGameSession implements Observer {
 	public String[] gameSetupData;
-	public int choosenColumn;
+	private int choosenColumn;
+	private boolean status;
+
+	public void update(Observable o, Object arg) {
+		Integer choosenColumn = (Integer) arg;
+		setChoosenColumn(choosenColumn.intValue());
+	}
 
 	/**
 	 * @return the choosenColumn
@@ -22,7 +28,20 @@ public class ControllerGameSession implements Observer {
 		this.choosenColumn = choosenColumn;
 	}
 
-	private boolean status;
+	/**
+	 * @return the gameSetupData
+	 */
+	public String[] getGameSetupData() {
+		return gameSetupData;
+	}
+
+	/**
+	 * @param gameSetupData
+	 *            the gameSetupData to set
+	 */
+	public void setGameSetupData(String[] gameSetupData) {
+		this.gameSetupData = gameSetupData;
+	}
 
 	public boolean isStatus() {
 		return status;
@@ -32,8 +51,4 @@ public class ControllerGameSession implements Observer {
 		this.status = status;
 	}
 
-	public void update(Observable o, Object arg) {
-		Integer choosenColumn = (Integer) arg;
-		setChoosenColumn(choosenColumn.intValue());
-	}
 }

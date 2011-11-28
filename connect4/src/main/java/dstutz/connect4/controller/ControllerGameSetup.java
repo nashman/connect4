@@ -5,6 +5,7 @@ import java.util.Observer;
 
 public class ControllerGameSetup implements Observer {
 	public String[] gameSetupData;
+
 	private boolean status;
 
 	public boolean isStatus() {
@@ -25,11 +26,22 @@ public class ControllerGameSetup implements Observer {
 	}
 
 	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
-		gameSetupData = (String[]) arg;
-		for (String str : gameSetupData) {
-			System.out.println("was kommt " + str);
-		}
+		setGameSetupData((String[]) arg);
 		setStatus(false);
+	}
+
+	/**
+	 * @return the gameSetupData
+	 */
+	public String[] getGameSetupData() {
+		return gameSetupData;
+	}
+
+	/**
+	 * @param gameSetupData
+	 *            the gameSetupData to set
+	 */
+	public void setGameSetupData(String[] gameSetupData) {
+		this.gameSetupData = gameSetupData;
 	}
 }

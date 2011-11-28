@@ -18,14 +18,6 @@ public class GameEngine {
 		gameSetup.setFrame(true);
 	}
 
-	public void startMatch(String[] gameSetupData) {
-		this.gameSetupData = gameSetupData;
-		gameScreen = new GameScreen();
-		gameScreen.setFrame(true);
-		gameScreen.setStartData(gameSetupData[0], gameSetupData[1], 0, 0,
-				DropColor.YELLOW);
-	}
-
 	public int[] getGameData() {
 		int[] intArr = new int[4];
 		intArr[0] = 2; // Spalte

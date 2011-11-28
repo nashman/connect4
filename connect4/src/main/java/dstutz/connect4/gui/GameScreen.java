@@ -69,18 +69,18 @@ public class GameScreen extends Observable {
 		slotPanel.setForeground(color);
 	}
 
-	public void setStartData(String yellowPlayer, String redPlayer,
-			int player1Turns, int player2Turns, DropColor dropColor) {
-		lblPlayers.setText("Match: " + yellowPlayer + " vs " + redPlayer);
-		lblYellowPlayer.setText("Yellow player: " + yellowPlayer);
-		lblRedPlayer.setText("Red player: " + redPlayer);
-		lblYellowDrops.setText("Yellow drops: " + player1Turns);
-		lblRedDrops.setText("Red drops: " + player2Turns);
+	public void setStartData(String[] gameSetupData, DropColor dropColor) {
+		lblPlayers.setText("Match: " + gameSetupData[0] + " vs "
+				+ gameSetupData[1]);
+		lblYellowPlayer.setText("Yellow player: " + gameSetupData[0]);
+		lblRedPlayer.setText("Red player: " + gameSetupData[1]);
+		lblYellowDrops.setText("Yellow drops: " + gameSetupData[2]);
+		lblRedDrops.setText("Red drops: " + gameSetupData[3]);
 
 		if (dropColor.toString().equals("YELLOW")) {
-			labelnextDrop.setText("Next Drop: " + yellowPlayer);
+			labelnextDrop.setText("Next Drop: " + gameSetupData[0]);
 		} else if (dropColor.toString().equals("RED")) {
-			labelnextDrop.setText("Next Drop: " + redPlayer);
+			labelnextDrop.setText("Next Drop: " + gameSetupData[1]);
 		}
 	}
 
