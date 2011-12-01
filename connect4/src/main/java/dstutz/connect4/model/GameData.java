@@ -22,4 +22,12 @@ public class GameData {
 		setupData[3] = "0";
 		this.setupData = setupData;
 	}
+
+	public int getPlayMoveFromUser() {
+		return playMoveFromUser;
+	}
+
+	public void setPlayMoveFromUser(int playMoveFromUser) {
+		this.playMoveFromUser = playMoveFromUser;
+	}
 }

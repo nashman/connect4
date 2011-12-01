@@ -5,7 +5,6 @@ import java.util.Observer;
 
 public class ControllerGameSetup implements Observer {
 	public String[] gameSetupData;
-
 	private boolean status;
 
 	public boolean isStatus() {

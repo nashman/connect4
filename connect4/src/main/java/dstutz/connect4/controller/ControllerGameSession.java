@@ -8,6 +8,14 @@ public class ControllerGameSession implements Observer {
 	private int choosenColumn;
 	private boolean status;
 
+	/**
+	 * 
+	 */
+	public ControllerGameSession() {
+		// TODO Auto-generated constructor stub
+		status = true;
+	}
+
 	public void update(Observable o, Object arg) {
 		Integer choosenColumn = (Integer) arg;
 		setChoosenColumn(choosenColumn.intValue());
@@ -43,12 +51,19 @@ public class ControllerGameSession implements Observer {
 		this.gameSetupData = gameSetupData;
 	}
 
-	public boolean isStatus() {
+	public boolean gameMoveChanged() {
 		return status;
 	}
 
 	public void setStatus(boolean status) {
 		this.status = status;
+	}
+
+	/**
+	 * @return the status
+	 */
+	public boolean isStatus() {
+		return status;
 	}
 
 }

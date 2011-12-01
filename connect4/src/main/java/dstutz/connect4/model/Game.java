@@ -40,14 +40,24 @@ public class Game {
 
 	public void startMatch() {
 		gameSetupData = gameSetupData;
+		gameEngine = new GameEngine();
 		gameScreen = new GameScreen();
 		gameScreen.setFrame(true);
+		gameScreen.addObserver(cGameSession);
 		gameScreen.setStartData(gameData.getSetupData(), DropColor.YELLOW);
+		// boolean gameMoveChanged=false;
 
-		// while (cGameSession.isStatus()) {
-		// System.out.println("Status Game " + cGameSetup.isStatus());
-		// }
-
+		while (cGameSession.isStatus()) {
+			gameData.setPlayMoveFromUser(cGameSession.getChoosenColumn());
+			// if(gameMoveChanged!=gameMoveChanged){
+			// gameMoveChanged == true ? gameMoveChanged = false :
+			// gameMoveChanged= true;
+			// }
+			System.out.println("choosen move from user: "
+					+ gameData.getPlayMoveFromUser());
+			gameEngine.checkUserMove(gameData.getPlayMoveFromUser());
+			;
+		}
 	}
 
 }

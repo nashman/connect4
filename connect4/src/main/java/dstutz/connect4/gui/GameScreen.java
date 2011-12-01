@@ -27,6 +27,10 @@ public class GameScreen extends Observable {
 	private JFrame frame;
 	private JLabel nextDropLabel;
 	private SlotPanel activeSlotPanel;
+	private int[] gameData;
+	private final int COLUMNS = 7;
+	private final int ROWS = 7;
+	private final SlotPanel[][] board = new SlotPanel[COLUMNS][ROWS];
 
 	/**
 	 * @return the activeSlotPanel
@@ -42,12 +46,6 @@ public class GameScreen extends Observable {
 	public void setActiveSlotPanel(SlotPanel activeSlotPanel) {
 		this.activeSlotPanel = activeSlotPanel;
 	}
-
-	private int[] gameData;
-
-	private final int COLUMNS = 7;
-	private final int ROWS = 7;
-	private final SlotPanel[][] board = new SlotPanel[COLUMNS][ROWS];
 
 	public void setBoard_slot(int col, int row, DropColor dropColor) {
 		Color color = new Color(255, 255, 255); // white
