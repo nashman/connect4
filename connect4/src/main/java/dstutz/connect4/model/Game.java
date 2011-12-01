@@ -55,8 +55,8 @@ public class Game {
 			// }
 			System.out.println("choosen move from user: "
 					+ gameData.getPlayMoveFromUser());
-			gameEngine.checkUserMove(gameData.getPlayMoveFromUser());
-			;
+			gameEngine.checkFreeRow(gameData);
+
 		}
 	}
 
