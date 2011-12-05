@@ -29,7 +29,7 @@ public class GameScreen extends Observable {
 	private SlotPanel activeSlotPanel;
 	private int[] gameData;
 	private final int COLUMNS = 7;
-	private final int ROWS = 7;
+	private final int ROWS = 6;
 	private final SlotPanel[][] board = new SlotPanel[COLUMNS][ROWS];
 
 	/**
@@ -236,7 +236,7 @@ public class GameScreen extends Observable {
 		for (int i = 0; i < COLUMNS; ++i) {
 			for (int j = 0; j < ROWS; ++j) {
 				if (board[i][j].equals(activeSlotPanel)) {
-					activeColumn = i + 1;
+					activeColumn = i;
 				}
 			}
 		}

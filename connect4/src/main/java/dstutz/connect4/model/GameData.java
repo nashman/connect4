@@ -10,6 +10,8 @@ package dstutz.connect4.model;
 public class GameData {
 	private int playMoveFromUser;
 	private int playMoveFromEngine;
+	private int[] nextFreeSlot = new int[2];
+
 	private String[] setupData;
 	private String[][] gameBoard = new String[7][6];
 
@@ -45,5 +47,14 @@ public class GameData {
 	 */
 	public void setGameBoard(String[][] gameBoard) {
 		this.gameBoard = gameBoard;
+	}
+
+	public int[] getNextFreeSlot() {
+		return nextFreeSlot;
+	}
+
+	public void setNextFreeSlot(int column, int row) {
+		this.nextFreeSlot[0] = column;
+		this.nextFreeSlot[1] = row;
 	}
 }

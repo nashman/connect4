@@ -24,16 +24,14 @@ public class GameEngine {
 		this.choosenColumn = choosenColumn;
 	}
 
-	public int checkFreeRow(GameData gameData) {
+	public boolean checkFreeRow(GameData gameData) {
 		String[][] str = gameData.getGameBoard();
-		int freeRow = 7;
 		for (int i = 0; i < 6; ++i) {
 			if (str[gameData.getPlayMoveFromUser()][i] == null) {
-				return freeRow = i;
+				gameData.setNextFreeSlot(gameData.getPlayMoveFromUser(), i);
+				return true;
 			}
 		}
-
-		// TODO Auto-generated method stub
-		return freeRow;
+		return false;
 	}
 }
