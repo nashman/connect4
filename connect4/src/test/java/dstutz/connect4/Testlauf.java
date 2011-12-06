@@ -3,20 +3,19 @@
  */
 package dstutz.connect4;
 
-import dstutz.connect4.model.Game;
+import dstutz.connect4.controller.ControllerGame;
 
 /**
  * @author Daniel Stutz
  * 
  */
 public class Testlauf {
-
 	public static void main(String[] args) {
-		Game game = new Game();
-		game.startSetup();
+		ControllerGame cGame = new ControllerGame();
+		// ----------------- Game Setup
+		cGame.startSetup();
 
 		// ----------------- Game start
-		game.startMatch();
-		// game.gameScreen.addObserver();
+		cGame.startMatch();
 	}
 }
