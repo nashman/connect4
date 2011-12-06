@@ -3,7 +3,7 @@
  *  
  * Source: https://github.com/nydi/java4edu
  */
-package dstutz.conntec4.model.db;
+package dstutz.connect4.model.db;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 

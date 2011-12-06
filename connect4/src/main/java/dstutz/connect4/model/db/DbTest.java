@@ -1,7 +1,7 @@
 /**
  * 
  */
-package dstutz.conntec4.model.db;
+package dstutz.connect4.model.db;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
