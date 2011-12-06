@@ -15,6 +15,7 @@ public class GameLogic {
 	private GameData gameData;
 
 	public GameLogic() {
+
 	}
 
 	public DropColor getActiveDropColor() {
@@ -27,14 +28,16 @@ public class GameLogic {
 		this.choosenColumn = choosenColumn;
 	}
 
-	public boolean checkFreeRow(GameData gameData) {
+	public boolean findFreeRow(GameData gameData) {
 		DropColor[][] board = gameData.getGameBoard();
 		for (int i = 0; i < 6; ++i) {
 			if (board[gameData.getPlayMoveFromUser()][i] == null) {
+				System.out.println("komme ich hier nie rein ?");
 				gameData.insertMove(gameData.getPlayMoveFromUser(), i,
 						DropColor.YELLOW);
 				return true;
 			}
+			System.out.println("dafuer hier ? ?");
 		}
 		return false;
 	}

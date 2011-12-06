@@ -16,6 +16,7 @@ public class ControllerGame implements Observer {
 	private SetupScreen gameSetup;
 	private ControllerGameSetup cGameSetup;
 	private GameScreen gameScreen;
+	private boolean firstMove = false;
 
 	public ControllerGame() {
 		// TODO Auto-generated constructor stub
@@ -46,6 +47,7 @@ public class ControllerGame implements Observer {
 				DropColor.YELLOW);
 
 		while (this.isStatus()) {
+
 			gameEngine.gameData.setPlayMoveFromUser(this.getChoosenColumn());
 			System.out.println("choosen move from user: "
 					+ gameEngine.gameData.getPlayMoveFromUser());
@@ -58,6 +60,7 @@ public class ControllerGame implements Observer {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+
 		}
 	}
 
@@ -66,6 +69,8 @@ public class ControllerGame implements Observer {
 	 */
 	public void update(Observable o, Object arg) {
 		if (o instanceof GameScreen) {
+			// firstMove = true;
+			System.out.println("Nun ist mein Observer informiert: " + "gugus");
 			Integer choosenColumn = (Integer) arg;
 			setChoosenColumn(choosenColumn.intValue());
 		}

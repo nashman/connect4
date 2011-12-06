@@ -35,7 +35,7 @@ public class GameEngine extends Observable {
 	 */
 	public boolean checkFreeSlot() {
 		// TODO Auto-generated method stub
-		if (!gameLogic.checkFreeRow(gameData)) {
+		if (!gameLogic.findFreeRow(gameData)) {
 			System.out.println("Kein freier Slot mehr");
 			return false;
 		} else {
@@ -66,8 +66,8 @@ public class GameEngine extends Observable {
 			gameFinished("Kein Slot mehr frei: Unentschieden");
 			return false;
 		}
-		if (!gameLogic.checkWinConditions()) {
-			gameFinished("Kein Slot mehr frei: Unentschieden");
+		if (gameLogic.checkWinConditions()) {
+			gameFinished("Es hat jemand gewonnen");
 			return false;
 		}
 

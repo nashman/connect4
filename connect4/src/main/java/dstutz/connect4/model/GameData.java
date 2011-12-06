@@ -16,6 +16,17 @@ public class GameData {
 	private String[] setupData;
 	private DropColor[][] gameBoard = new DropColor[7][6];
 
+	public GameData() {
+		// TODO Auto-generated constructor stub
+
+		// Game board initialize
+		for (int i = 0; i < 7; ++i) {
+			for (int j = 0; j < 6; ++j) {
+				gameBoard[i][j] = null;
+			}
+		}
+	}
+
 	public String[] getSetupData() {
 		return setupData;
 	}
